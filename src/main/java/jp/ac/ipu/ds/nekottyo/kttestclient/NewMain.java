@@ -38,7 +38,7 @@ public class NewMain {
                 AddrUtil.getAddresses(hostname + ":" + port));
         builder.setTranscoder(new TokyoTyrantTranscoder());
         MemcachedClient client = builder.build();
-        ArrayList<String> keylist = new ArrayList<String>();
+        ArrayList<String> keylist = new ArrayList<>();
 
         try {
             // set data
@@ -49,7 +49,7 @@ public class NewMain {
                 keylist.add(i.toString());
             }
 
-            KeyIterator ite;
+            KeyIterator ite = null;
             ite = client.getKeyIterator(AddrUtil.getOneAddress("localhost:11211"));
             System.err.println("pppppprinttttt ");
             System.out.println(ite.toString());
